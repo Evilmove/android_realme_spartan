@@ -14,10 +14,6 @@ $(call inherit-product, device/realme/spartan/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
-TARGET_GAPPS_ARCH := arm64
-TARGET_BOOT_ANIMATION_RES := 1080
-VOLTAGE_GAPPS_PACKAGE := core/mini/pico/full
-
 PRODUCT_NAME := voltage_spartan
 PRODUCT_DEVICE := spartan
 PRODUCT_MANUFACTURER := realme
