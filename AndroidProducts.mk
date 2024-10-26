@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_spartan.mk
+    $(LOCAL_DIR)/orion_spartan.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_spartan-user \
-    lineage_spartan-userdebug \
-    lineage_spartan-eng
+    orion_spartan-user \
+    orion_spartan-userdebug \
+    orion_spartan-eng
