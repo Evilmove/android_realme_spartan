@@ -14,6 +14,28 @@ $(call inherit-product, device/realme/spartan/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# UDFPS support
+TARGET_HAS_UDFPS := true
+
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# BCR (Call recording)
+TARGET_PREBUILT_BCR := false
+
+# build Lawnchair with QUICK switch (Pixel launcher by default)
+TARGET_PREBUILT_PIXEL_LAUNCHER := true
+
+# Custom package installer
+TARGET_USE_CUSTOM_PACKAGE_INSTALLER := true
+
+# Exclude Aperture camera
+PRODUCT_NO_CAMERA := true
+TARGET_CAMERA_PACKAGE_NAME := com.oplus.camera
+
 PRODUCT_NAME := lineage_spartan
 PRODUCT_DEVICE := spartan
 PRODUCT_MANUFACTURER := realme

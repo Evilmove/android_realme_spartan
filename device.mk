@@ -518,5 +518,3 @@ PRODUCT_PACKAGES += \
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/realme/spartan/spartan-vendor.mk)
 
-#include lineage sign build key 
-include vendor/lineage-priv/keys/keys.mk
