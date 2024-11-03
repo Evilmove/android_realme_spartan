@@ -364,10 +364,6 @@ $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Parts
-PRODUCT_PACKAGES += \
-    RealmeParts
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
