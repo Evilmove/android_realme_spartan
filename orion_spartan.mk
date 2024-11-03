@@ -14,7 +14,41 @@ $(call inherit-product, device/realme/spartan/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_spartan
+# UDFPS support 
+TARGET_HAS_UDFPS := true
+
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# Lawnchair (Pixel launcher by default)
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
+# Custom package installer
+TARGET_USE_CUSTOM_PACKAGE_INSTALLER := true
+
+# Live wallpapers
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+
+# Quick tap
+TARGET_SUPPORTS_QUICK_TAP  := true
+
+# Call Recording Support
+TARGET_SUPPORTS_CALL_RECORDING := true
+
+# GMS
+WITH_GMS := true
+
+# Orion OS Flags
+ORION_MAINTAINER="Rahul"
+ORION_MAINTAINER_LINK := "https://t.me/Evilmove"
+ORION_BUILD_TYPE := UNOFFICIAL
+ORION_GAPPS := true
+
+PRODUCT_NAME := orion_spartan
 PRODUCT_DEVICE := spartan
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
@@ -22,16 +56,6 @@ PRODUCT_MODEL := RMX3371
 
 PRODUCT_SYSTEM_NAME := RMX3371
 PRODUCT_SYSTEM_DEVICE := RE54E4L1
-
-# Inherit some common crDroid stuff
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_SUPPORTS_CALL_RECORDING := true
-TARGET_INCLUDE_PIXEL_CHARGER := true
-TARGET_HAS_UDFPS := true
-TARGET_ENABLE_BLUR := true
-TARGET_EXCLUDES_AUDIOFX := true
-EXTRA_UDFPS_ICONS := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
