@@ -538,7 +538,8 @@ $(call inherit-product, vendor/realme/spartan/spartan-vendor.mk)
 
 # Camera
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
-
+#include signe keys
+-include vendor/lineage-priv/keys/keys.mk
 
 # Custom Apps
 PRODUCT_PACKAGES += \
