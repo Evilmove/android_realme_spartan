@@ -129,6 +129,8 @@ persist.vendor.qcom.bluetooth.soc=hastings
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
+persist.vendor.btstack.enable.twsplus=true 
+persist.vendor.btstack.enable.twsplussho=true
 
 # Chipset
 ro.soc.manufacturer=QTI
