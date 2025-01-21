@@ -1,2 +1,5 @@
+# Bluetooth
+persist.vendor.btstack.enable.twsplus=true
+
 # Display
 persist.sys.brightness.low.gamma=true
