@@ -17,7 +17,6 @@ AB_OTA_PARTITIONS += \
     dtbo \
     odm \
     product \
-    recovery \
     system \
     system_ext \
     vbmeta \
@@ -27,19 +26,37 @@ AB_OTA_PARTITIONS += \
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
+# Enable support for 64-bit binder interface
+TARGET_USES_64_BIT_BINDER := true
+RELAX_USES_LIBRARY_CHECK=true
+# Enable vendor image support (Treble)
+BOARD_VNDK_VERSION := current
+
+# Enable APEX preloading for better performance
+TARGET_SUPPORTS_PREBUILT_APEX := true
+
+# Enable SDM/Adreno GPU optimizations
+TARGET_USES_QCOM_BSP := true
+TARGET_USES_QCOM_HARDWARE := true
+TARGET_USE_QTI_BSP := true
+
+# For devices based on QCOM display/audio HALs
+TARGET_USES_QCOM_DISPLAY_BSP := true
+TARGET_USES_QCOM_AUDIO_BSP := trues
+
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := kryo385
+TARGET_CPU_VARIANT := cortex-a76
+TARGET_CPU_VARIANT_RUNTIME := kryo585
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
+TARGET_2ND_CPU_VARIANT := cortex-a76
+TARGET_2ND_CPU_VARIANT_RUNTIME := kryo585
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := RMX3371,RE54E4L1
@@ -124,9 +141,16 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
-TARGET_KERNEL_ADDITIONAL_FLAGS := BRAND_SHOW_FLAG=realme
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    BRAND_SHOW_FLAG=realme \
+    LLVM=1 \
+    LLVM_IAS=1 \
+    HOSTCC=clang \
+    HOSTCXX=clang++ \
+    CC=clang
 TARGET_KERNEL_SOURCE := kernel/realme/sm8250
-TARGET_KERNEL_CONFIG := vendor/kona-perf_defconfig
+TARGET_KERNEL_CONFIG := vendor/sm8250_defconfig
+CLANG_FLAGS_USES_RESPONSES := true
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
